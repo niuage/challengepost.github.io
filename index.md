@@ -1,37 +1,66 @@
-## Welcome to GitHub Pages
+# Devpost Rails exercise
 
-You can use the [editor on GitHub](https://github.com/challengepost/challengepost.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+Let's build a simple To-Do application in Ruby on Rails.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Some of topics we'll be looking at are:
 
-### Markdown
+- MVC (routes, migrations, views, etc)
+- Simple context-based validations
+- Relationships
+- Performance
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## To-Do application details
 
-```markdown
-Syntax highlighted code block
+### Business rules
 
-# Header 1
-## Header 2
-### Header 3
+- Users can have multiple To-Dos
+- To-Dos can have multiple tasks
+- Users can be free users or paid users
+- Free users can add a maximum of 3 tasks to any given To-Do
+- Paid users can add as many tasks as they want to any given To-Do
 
-- Bulleted
-- List
+### Suggested models
 
-1. Numbered
-2. List
+#### Todo
 
-**Bold** and _Italic_ and `Code` text
+- title (maximum of 255 characters)
 
-[Link](url) and ![Image](src)
-```
+#### Task
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+- description (maximum of 1000 characters)
+- done (boolean representing the completion state)
 
-### Jekyll Themes
+#### User
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/challengepost/challengepost.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Pages
 
-### Support or Contact
+- A User page displaying the user name and a list of their To-Dos (don't bother with pagination).
+    + For each To-Do, display their title, their state, and their tasks
+    + The state of a To-Do is derived from the state of its tasks. A To-Do is done only if all its tasks are done.
+    + Each task should display its description, as well as its state (done/not done, ✔/✗, ... up to you)
+Keep performance in mind here.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- 
+- tasks under them, showing if they are complete or not. This can be accessed by anyone.
+A page with a form to create a todo and add tasks for the signed in user
+A page with a form to edit a todo and change for the signed in user
+    Task do not need to be removed
+Pages should show error messages for invalid inputs
+
+Todo attributes: 
+Title (255 max)
+Done or not
+
+Task attributes:
+Title (255 max)
+
+User attributes:
+Name
+Free or paid
+*Users can be added directly to database or console
+*User can log in with basic authentication
+
+Testing for 2nd round possibly.
+Javascript possibly for 2nd round.
+
+
