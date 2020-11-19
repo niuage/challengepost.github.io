@@ -20,10 +20,102 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
-
+    <header>
+      <a href="https://devpost.com">
+        <img src="https://devpost-challengepost.netdna-ssl.com/assets/reimagine2/devpost-logo.svg" alt="">
+      </a>
+    </header>
     <main id="content" class="main-content" role="main">
-      {{ content }}
+      <h1>
+        Devpost Rails exercise
+      </h1>
+
+      <p>
+        Let's build a simple To-Do application in Ruby on Rails.
+      </p>
+
+      <p>
+        Some of topics we'll be looking at are:
+      </p>
+
+      <ul>
+        <li>MVC (routes, migrations, views, etc)</li>
+        <li>Simple context-based validations</li>
+        <li>Relationships</li>
+        <li>Performance</li>
+      </ul>
+
+      <h2>
+        The To-Do application
+      </h2>
+
+      <h3>Business rules</h3>
+
+- Users can have multiple To-Dos
+- To-Dos can have multiple tasks
+- Users can be free users or paid users
+- Free users can add a maximum of 3 tasks to any given To-Do
+- Paid users can add as many tasks as they want to any given To-Do
+
+### Suggested models
+
+<table>
+    <tr>
+        <th>Todo</th>
+        <th>Task</th>
+        <th>User</th>
+    </tr>
+
+    <tr>
+        <td>
+            - title (maximum of 255 characters)
+        </td>
+
+        <td>
+            - description (maximum of 1000 characters)
+            - done (boolean representing the completion state)
+        </td>
+    </tr>
+</table>
+#### Todo
+
+
+
+#### Task
+
+
+
+#### User
+
+### Pages
+
+- A User page displaying the user name and a list of their To-Dos (don't bother with pagination).
+    + For each To-Do, display their title, their state, and their tasks
+    + The state of a To-Do is derived from the state of its tasks. A To-Do is done only if all its tasks are done.
+    + Each task should display its description, as well as its state (done/not done, ✔/✗, ... up to you)
+Keep performance in mind here.
+This
+
+A page with a form to create a todo and add tasks for the signed in user
+A page with a form to edit a todo and change for the signed in user
+    Task do not need to be removed
+Pages should show error messages for invalid inputs
+
+Todo attributes:
+Title (255 max)
+Done or not
+
+Task attributes:
+Title (255 max)
+
+User attributes:
+Name
+Free or paid
+*Users can be added directly to database or console
+*User can log in with basic authentication
+
+Testing for 2nd round possibly.
+Javascript possibly for 2nd round.
     </main>
   </body>
 </html>
