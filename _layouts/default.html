@@ -33,22 +33,14 @@
       </h1>
 
       <p>
-        ✅ Let's build a simple To-Do application in Ruby on Rails!
+        Let's build a mini-Devpost in Ruby on Rails!
+        <br>
+        This exercise is straightforward and will allow you to demonstrate your
+        knowledge of the Rails fundamentals.
       </p>
-
-      <p>
-        This exercise will allow you to show your knowledge in a few areas:
-      </p>
-      <ul>
-        <li>MVC</li>
-        <li>Simple context-based validations</li>
-        <li>Model relationships</li>
-        <li>Performance</li>
-        <li>... and more!</li>
-      </ul>
 
       <h2>
-        The To-Do application
+        The application
       </h2>
 
       <h3>Business rules</h3>
@@ -56,11 +48,11 @@
       <p>Let's get down to business:</p>
 
       <ul>
-        <li>Users can have multiple To-Dos</li>
-        <li>To-Dos can have multiple tasks</li>
+        <li>Users can create Competitions.</li>
+        <li>Competitions can have multiple prizes</li>
         <li>Users can be free users or paid users</li>
-        <li>Free users can add a maximum of 3 tasks toe each of their To-Dos</li>
-        <li>Paid users can add as many tasks as they want to each of their To-Dos</li>
+        <li>Free users can add a maximum of 3 prizes to each of their Competitions</li>
+        <li>Paid users can add as many prizes as they want to each of their Competitions</li>
       </ul>
 
       <h3>Suggested models</h3>
@@ -69,24 +61,24 @@
 
       <table>
           <tr>
-              <th>Todo</th>
-              <th>Task</th>
+              <th>Competition</th>
+              <th>Prize</th>
               <th>User</th>
           </tr>
 
           <tr>
               <td>
                 <p>
-                  <code>Title</code> (255 chars max)
+                  <code>Name</code> (255 chars max)
                 </p>
               </td>
 
               <td>
                 <p>
-                  <code>Description</code> (1000 chars max)
+                  <code>Name</code> (1000 chars max)
                 </p>
                 <p>
-                  <code>Done</code> (completion state)
+                  <code>Dollar value</code> (cannot be negative)
                 </p>
               </td>
 
@@ -112,50 +104,59 @@
           <li>the <strong>user name</strong></li>
           <li>
             <p>
-              a <strong>list of their To-Dos</strong> (don't bother with pagination)
+              a <strong>list of their Competitions</strong> (don't bother with pagination)
             </p>
 
             <p>
-              For each To-Do, display:
+              For each Competition, display:
 
               <ul>
-                <li>their <strong>title</strong></li>
-                <li>their <strong>state</strong>. The state of a To-Do is derived from the state of its tasks. A To-Do is "done" only if all its tasks are done.</li>
-                <li>all their <strong>tasks</strong></li>
+                <li>their <strong>name</strong></li>
+                <li>their <strong>total prize value</strong> (i.e. the sum of the prize values).</li>
+                <li>all their <strong>prizes</strong></li>
               </ul>
             </p>
 
-            <p>For each task, display:</p>
+            <p>For each prize, display:</p>
 
             <ul>
-              <li>their <strong>description</strong></li>
-              <li>their <strong>state</strong> (checkboxes, ✔/✘ icons, done/not done, ... up to you)</li>
+              <li>their <strong>name</strong></li>
+              <li>their <strong>value</strong></li>
             </ul>
           </li>
         </ul>
 
-        Keep performances in mind here ;)
+        Keep performance in mind here ;)
       </p>
 
-      <h4>To-Do creation form</h4>
+      <h4>Competition creation form</h4>
 
       <p>
-        A simple form allowing a signed in user to create a To-Do, and add tasks to it.
+        A single form allowing a signed in user to create a To-Do along with its prizes.
       </p>
       <p>
         Do not bother with Javascript at this stage, you can make it so there are a fixed number
-        of text fields to add tasks.
+        of fields to add prizes.
       </p>
 
       <h4>To-Do update form</h4>
 
       <p>
-        Same as above, but to edit an existing To-Do. This page should only be accessible to the To-Do owner.
+        Same as above, but to edit an existing Competition. This page should only be accessible to the Competition owner.
       </p>
 
-      <p><small>ps: We're not asking you to make tasks deletable.</small></p>
+      <p><small>ps: We're not asking you to make prizes deletable.</small></p>
 
       <p>All the forms should display error messages for invalid inputs.</p>
+
+      <p>
+        Adding comments to your code to explain your choices,
+        or briefly mention alternatives you considered is encouraged.
+      </p>
+
+      <h3>How to submit?</h3>
+
+      <p>Simply host your code on Github, or Bitbucket, and share it with us: <a href="mailto:tech@devpost.com">tech@devpost.com</a>.</p>
 
       <h3>Questions?</h3>
 
