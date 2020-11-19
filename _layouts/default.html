@@ -21,13 +21,14 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
-    <header>
-      <a href="https://devpost.com">
-        <img src="https://devpost-challengepost.netdna-ssl.com/assets/reimagine2/devpost-logo.svg" alt="">
-      </a>
-    </header>
-    <main id="content" class="main-content" role="main">
-      <h1>
+    <main id="content" class="content main-content" role="main">
+      <header>
+        <a href="https://devpost.com">
+          <img src="https://devpost-challengepost.netdna-ssl.com/assets/reimagine2/devpost-logo.svg" alt="">
+        </a>
+      </header>
+
+      <h1 class="is-size-2">
         Devpost Rails exercise
       </h1>
 
@@ -52,71 +53,111 @@
 
       <h3>Business rules</h3>
 
-- Users can have multiple To-Dos
-- To-Dos can have multiple tasks
-- Users can be free users or paid users
-- Free users can add a maximum of 3 tasks to any given To-Do
-- Paid users can add as many tasks as they want to any given To-Do
+      <ul>
+        <li>Users can have multiple To-Dos</li>
+        <li>To-Dos can have multiple tasks</li>
+        <li>Users can be free users or paid users</li>
+        <li>Free users can add a maximum of 3 tasks to any given To-Do</li>
+        <li>Paid users can add as many tasks as they want to any given To-Do</li>
+      </ul>
 
-### Suggested models
+      <h3>Suggested models</h3>
 
-<table>
-    <tr>
-        <th>Todo</th>
-        <th>Task</th>
-        <th>User</th>
-    </tr>
+      <table>
+          <tr>
+              <th>Todo</th>
+              <th>Task</th>
+              <th>User</th>
+          </tr>
 
-    <tr>
-        <td>
-            - title (maximum of 255 characters)
-        </td>
+          <tr>
+              <td>
+                <p>
+                  <code>title</code> (maximum of 255 characters)
+                </p>
+              </td>
 
-        <td>
-            - description (maximum of 1000 characters)
-            - done (boolean representing the completion state)
-        </td>
-    </tr>
-</table>
-#### Todo
+              <td>
+                <p>
+                  <code>description</code> (maximum of 1000 characters)
+                </p>
+                <p>
+                  <code>done</code> (boolean representing the completion state)
+                </p>
+              </td>
 
+              <td>
+                <p>
+                  <code>Full name</code>
+                </p>
+                <p>
+                  <code>Free or paid</code>
+                </p>
+              </td>
+          </tr>
+      </table>
 
+      <p>Feel free to rename these models or attributes as you see fit.</p>
 
-#### Task
+      <h3>Application pages</h3>
 
+      <h4>User page</h4>
 
+      <p>
+        It should display:
 
-#### User
+        <ul>
+          <li>the <strong>user name</strong></li>
+          <li>
+            <p>
+              a <strong>list of their To-Dos</strong> (don't bother with pagination)
+            </p>
 
-### Pages
+            <p>
+              For each To-Do, display:
 
-- A User page displaying the user name and a list of their To-Dos (don't bother with pagination).
-    + For each To-Do, display their title, their state, and their tasks
-    + The state of a To-Do is derived from the state of its tasks. A To-Do is done only if all its tasks are done.
-    + Each task should display its description, as well as its state (done/not done, ✔/✗, ... up to you)
-Keep performance in mind here.
-This
+              <ul>
+                <li>their <strong>title</strong></li>
+                <li>their <strong>state</strong>. The state of a To-Do is derived from the state of its tasks. A To-Do is "done" only if all its tasks are done.</li>
+                <li>all their <strong>tasks</strong></li>
+              </ul>
+            </p>
 
-A page with a form to create a todo and add tasks for the signed in user
-A page with a form to edit a todo and change for the signed in user
-    Task do not need to be removed
-Pages should show error messages for invalid inputs
+            <p>For each task, display:</p>
 
-Todo attributes:
-Title (255 max)
-Done or not
+            <ul>
+              <li>their <strong>description</strong></li>
+              <li>their <strong>state</strong> (done/not done, ✔/✘, ... up to you)</li>
+            </ul>
+          </li>
+        </ul>
 
-Task attributes:
-Title (255 max)
+        <br>
 
-User attributes:
-Name
-Free or paid
-*Users can be added directly to database or console
-*User can log in with basic authentication
+        Keep performances in mind here ;)
+      </p>
 
-Testing for 2nd round possibly.
-Javascript possibly for 2nd round.
+      <h4>To-Do creation form</h4>
+
+      <p>
+        A simple form allowing a signed in user to create a To-Do, and add tasks to it.
+      </p>
+      <p>
+        Do not bother with Javascript at this stage, you can make it so there are a fixed number
+        of text fields to add tasks.
+      </p>
+
+      <h4>To-Do update form</h4>
+
+      <p>
+        Same as above, but to edit an existing To-Do. This page should only be accessible to the To-Do owner.
+      </p>
+
+      <p>ps: We're not asking you to make tasks deletable.</p>
+
+      <hr>
+
+      <p>All the forms should display error messages for invalid inputs.</p>
     </main>
   </body>
 </html>
