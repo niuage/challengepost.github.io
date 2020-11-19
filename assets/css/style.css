@@ -1,6 +1,6 @@
 body {
   background-color: #f5f5f5;
-  margin: 40px 0;
+  padding: 40px 0;
 }
 
 header img {
@@ -9,7 +9,7 @@ header img {
 
 #content {
   width: 777px;
-  max-width: 90%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 50px;
   background: white;
